@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen ICFES Parte 2 - Notices and signs</title>
+  <meta name="description" content="Generador inteligente de ejercicios Notices para Saber 11 impulsado por IA">
+  
+  <!-- Local Fonts - No External Dependencies -->
+  
+  <style>
+/* ==========================================
+   Exam Engine 2.0 - Premium Styling System
+   ========================================== */
+
+/* Design Tokens & Theme Variables */
+:root {
+  --font-family-title: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-body: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  
+  --color-emerald: #10b981;
+  --color-emerald-light: rgba(16, 185, 129, 0.15);
+  --color-emerald-border: rgba(16, 185, 129, 0.4);
+  
+  --color-rose: #f43f5e;
+  --color-rose-light: rgba(244, 63, 94, 0.15);
+  --color-rose-border: rgba(244, 63, 94, 0.4);
+  
+  --color-warning-amber: #d97706;
+  --color-warning-light: #fef3c7;
+  
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s ease-out;
+}
+
+/* Dark Theme (Default) */
+.theme-slate-dark {
+  --bg-app: #0b0f19;
+  --bg-card: #131c2e;
+  --bg-card-hover: #1b263f;
+  --bg-input: #1b263f;
+  --border-color: #24324f;
+  
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --text-inverse: #0b0f19;
+  
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-primary-light: rgba(99, 102, 241, 0.15);
+  
+  --color-secondary: #0ea5e9;
+  --color-secondary-hover: #0284c7;
+  
+  --color-accent: #a855f7;
+  --color-accent-hover: #9333ea;
+  
+  --scrollbar-track: #0b0f19;
+  --scrollbar-thumb: #24324f;
+}
+
+/* Light Theme */
+.theme-slate-light {
+  --bg-app: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-input: #f8fafc;
+  --border-color: #e2e8f0;
+  
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+  
+  --color-primary: #4f46e5;
+  --color-primary-hover: #3730a3;
+  --color-primary-light: rgba(79, 70, 229, 0.08);
+  
+  --color-secondary: #0284c7;
+  --color-secondary-hover: #0369a1;
+  
+  --color-accent: #7e22ce;
+  --color-accent-hover: #6b21a8;
+  
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-family-body);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-normal);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--border-radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Layout Containers */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 48px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.3)); }
+  to { filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.6)); }
+}
+
+.logo-text h1 {
+  font-family: var(--font-family-title);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.logo-text p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-icon {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.icon-svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Main Content Workspace */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 20px;
+}
+
+.part-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.part-badge {
+  align-self: flex-start;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.part-title {
+  font-family: var(--font-family-title);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.part-instructions {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Exercise workspace area */
+.exercise-workspace {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+  min-height: 400px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer & Action Panel */
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.score-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.score-text {
+  font-family: var(--font-family-title);
+  font-weight: 700;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: var(--bg-input);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transition: width 0.5s ease-out;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Button UI Components */
+.btn {
+  font-family: var(--font-family-title);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-md);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-normal);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--bg-input);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+.btn-secondary:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--text-inverse);
+}
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+/* ===== NOTICE COMPONENT ===== */
+.notices-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.notice-question-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 20px;
+  align-items: center;
+}
+
+.notice-signboard-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.notice-signboard {
+  background-color: #fef08a;
+  color: #1c1917;
+  border: 4px solid #1c1917;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+  font-weight: 800;
+  font-family: var(--font-family-title);
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.notice-signboard.paper {
+  background-color: #f5f5dc;
+  border: 2px solid #8b7355;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notice-signboard.metal {
+  background: linear-gradient(135deg, #d4d4d4 0%, #a8a8a8 50%, #d4d4d4 100%);
+  color: #1c1917;
+  border: 3px solid #666;
+  border-radius: 4px;
+}
+
+.notice-signboard.cardboard {
+  background-color: #c4a35a;
+  color: #1c1917;
+  border: 2px solid #8b6914;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.notice-signboard.digital {
+  background-color: #1a1a2e;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  border-radius: 2px;
+  font-family: 'Courier New', monospace;
+  text-transform: none;
+}
+
+.notice-signboard.classroom {
+  background-color: #fff9c4;
+  color: #1c1917;
+  border: 3px solid #f57f17;
+  border-radius: 12px;
+}
+
+.notice-signboard.library {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  border: 2px solid #2e7d32;
+}
+
+.notice-signboard.office {
+  background-color: #eceff1;
+  color: #37474f;
+  border: 2px solid #546e7a;
+}
+
+.notice-signboard.glass {
+  background: rgba(255, 255, 255, 0.3);
+  color: #1c1917;
+  border: 3px solid rgba(100, 100, 100, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.notice-signboard.silver {
+  background: linear-gradient(135deg, #e8e8e8 0%, #c0c0c0 50%, #e8e8e8 100%);
+  color: #2c3e50;
+  border: 3px solid #a0a0a0;
+  box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);
+}
+
+.notice-signboard.vintage {
+  background-color: #f4e4bc;
+  color: #5c4033;
+  border: 4px double #8b7355;
+  box-shadow: inset 0 0 20px rgba(139, 115, 85, 0.2);
+  font-family: Georgia, serif;
+}
+
+.notice-signboard.gobelin {
+  background: linear-gradient(to bottom, #8b0000, #5c0000);
+  color: #ffd700;
+  border: 8px solid #daa520;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  font-family: 'Times New Roman', serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.notice-signboard.gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ffb700 50%, #ffd700 100%);
+  color: #1a1a1a;
+  border: 4px solid #b8860b;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+}
+
+.notice-signboard.bronze {
+  background: linear-gradient(135deg, #cd7f32 0%, #a0522d 50%, #cd7f32 100%);
+  color: #1a1a1a;
+  border: 3px solid #8b4513;
+  box-shadow: 0 4px 12px rgba(205, 127, 50, 0.4);
+}
+
+.notice-signboard.copper {
+  background: linear-gradient(135deg, #b87333 0%, #8b5a2b 50%, #b87333 100%);
+  color: #1a1a1a;
+  border: 3px solid #6b4423;
+  box-shadow: 0 4px 12px rgba(184, 115, 51, 0.4);
+}
+
+.notice-signboard.wood {
+  background: linear-gradient(to right, #8b5a2b, #a0522d, #8b5a2b);
+  color: #f5deb3;
+  border: 4px solid #5c3317;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  font-family: Georgia, serif;
+}
+
+.notice-signboard.fabric {
+  background-color: #e6d5ac;
+  color: #4a3728;
+  border: 2px dashed #8b7355;
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.2);
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(139, 115, 85, 0.1) 5px, rgba(139, 115, 85, 0.1) 10px);
+}
+
+.notice-signboard.neon {
+  background-color: #0a0a0a;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+}
+
+.notice-signboard.retro {
+  background: linear-gradient(to bottom, #ff6b6b, #ee5a5a);
+  color: #ffffff;
+  border: 4px solid #cc4444;
+  box-shadow: 4px 4px 0 #aa3333;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.notice-signboard.minimal {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-weight: 400;
+}
+
+.notice-signboard.elegant {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #ecf0f1;
+  border: 2px solid #bdc3c7;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.notice-signboard.rustic {
+  background-color: #d4a574;
+  color: #3e2723;
+  border: 4px solid #5d4037;
+  box-shadow: inset 0 0 15px rgba(93, 64, 55, 0.3);
+  font-family: Georgia, serif;
+}
+
+.notice-signboard.modern {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  border-radius: 16px;
+}
+
+.notice-signboard.classic {
+  background-color: #f8f8f8;
+  color: #2c3e50;
+  border: 3px solid #34495e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Georgia, serif;
+}
+
+.notice-signboard.artistic {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1);
+  background-size: 400% 400%;
+  color: #2d3436;
+  border: 3px solid #6c5ce7;
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.3);
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.notice-options-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notice-options-pane h4 {
+  font-family: var(--font-family-title);
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.abc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.abc-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 12px 16px;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  font-family: inherit;
+  transition: var(--transition-fast);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.abc-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--text-muted);
+}
+
+.abc-btn.selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.abc-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--bg-input);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.abc-btn.selected .abc-letter {
+  background: var(--color-primary);
+  color: var(--text-inverse);
+  border-color: var(--color-primary);
+}
+
+.abc-btn.correct {
+  border-color: var(--color-emerald);
+  background-color: var(--color-emerald-light);
+}
+
+.abc-btn.correct .abc-letter {
+  background: var(--color-emerald);
+  color: var(--text-inverse);
+  border-color: var(--color-emerald);
+}
+
+.abc-btn.incorrect {
+  border-color: var(--color-rose);
+  background-color: var(--color-rose-light);
+}
+
+.abc-btn.incorrect .abc-letter {
+  background: var(--color-rose);
+  color: var(--text-inverse);
+  border-color: var(--color-rose);
+}
+
+/* Example Section Styles */
+.example-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.example-label {
+  font-family: var(--font-family-title);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.example-answer-panel {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.answer-label {
+  font-family: var(--font-family-title);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.answer-options {
+  display: flex;
+  gap: 16px;
+}
+
+.answer-choice {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+.answer-choice.is-selected {
+  border-width: 3px;
+  border-color: var(--color-emerald);
+  background: var(--color-emerald);
+  color: var(--text-inverse);
+}
+
+.notice-question-card.example-card {
+  background: var(--bg-card);
+  border: 2px solid var(--color-secondary);
+}
+
+.notice-question-card.example-card .notice-signboard {
+  opacity: 0.9;
+}
+
+.notice-question-card.example-card .abc-btn {
+  cursor: default;
+  pointer-events: none;
+}
+
+.notice-question-card.example-card .abc-btn.correct {
+  border-color: var(--color-emerald);
+  background-color: var(--color-emerald-light);
+}
+
+.notice-question-card.example-card .abc-btn.correct .abc-letter {
+  background: var(--color-emerald);
+  color: var(--text-inverse);
+  border-color: var(--color-emerald);
+}
+
+/* Loading States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-family: var(--font-family-title);
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .notice-question-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-header {
+    padding: 12px 16px;
+  }
+  
+  .logo-icon {
+    font-size: 36px;
+  }
+  
+  .main-content {
+    padding: 16px;
+  }
+  
+  .action-buttons {
+    width: 100%;
+  }
+  
+  .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+  </style>
+</head>
+<body class="theme-slate-dark">
+  <div class="app-container">
+    <!-- Header -->
+    <header class="main-header">
+      <div class="header-logo">
+        <div class="logo-icon"></div>
+        <div class="logo-text">
+             <h1>📚ICFES practice tests⚡ Part 2<br/>ℹ️ Notices & Signs</h1>
+              <p>Practice Saber 11 English -Part 2-</p>
+        </div>
+
+
+      </div>
+      <div class="header-actions">
+        <button class="btn-icon" id="themeToggle" title="Cambiar tema">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="part-info-section">
+        <div class="part-badge">Part 2</div>
+        <h2 class="part-title">ℹ️ Notices & Signs</h2>
+        <p class="part-instructions">RESPONDE LAS PREGUNTAS 1-5 DE ACUERDO CON EL SIGUIENTE EJEMPLO<br/>
+¿Dónde puede ver estos avisos? En las preguntas 1 a 5, marque A, B o C, según sean sus respuestas.</p>
+      </section>
+
+      <section class="exercise-workspace" id="workspace">
+        <div class="loading-container">
+          <div class="spinner"></div>
+          <p class="loading-text">Generando ejercicio...</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="score-card">
+        <span class="score-text">Puntuación: <span id="scoreDisplay">0/0</span></span>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button class="btn btn-secondary" id="btnReset">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+          </svg>
+          Reiniciar
+        </button>
+        <button class="btn btn-secondary" id="btnShowAnswers">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          Mostrar Respuestas
+        </button>
+        <button class="btn btn-primary" id="btnCheck">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Verificar
+        </button>
+        <button class="btn btn-accent" id="btnGenerate">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            <polyline points="9 11 12 14 22 4"></polyline>
+          </svg>
+          Nuevo Ejercicio
+        </button>
+      </div>
+       <p style="text-align: right; font-size: 9px;">Aplicación diseñada por el profesor <b>Édgar Herrera</b> con el apoyo de la IA agéntica <b><a href="https://devin.ai/desktop"> Windsurf </a></b></p>
+    </footer>
+  </div>
+
+  <script>
+// ==========================================
+// Exam Engine 2.0 - Part 2 Notices Generator
+// ==========================================
+
+// State Management
+const state = {
+  currentExercise: null,
+  userAnswers: {},
+  checked: false,
+  theme: 'dark'
+};
+
+// DOM Elements
+const el = {
+  workspace: document.getElementById('workspace'),
+  themeToggle: document.getElementById('themeToggle'),
+  scoreDisplay: document.getElementById('scoreDisplay'),
+  progressBar: document.getElementById('progressBar'),
+  btnReset: document.getElementById('btnReset'),
+  btnShowAnswers: document.getElementById('btnShowAnswers'),
+  btnCheck: document.getElementById('btnCheck'),
+  btnGenerate: document.getElementById('btnGenerate')
+};
+
+// ==========================================
+// Local CSS-based Notice Rendering (No External API)
+// ==========================================
+class NoticeStyleManager {
+  constructor() {
+    this.availableStyles = [
+      'paper', 'metal', 'cardboard', 'digital', 'classroom', 'library', 'office', 'glass',
+      'silver', 'vintage', 'gobelin', 'gold', 'bronze', 'copper', 'wood', 'fabric',
+      'neon', 'retro', 'minimal', 'elegant', 'rustic', 'modern', 'classic', 'artistic'
+    ];
+  }
+
+  getStyleClass(style) {
+    return this.availableStyles.includes(style) ? style : 'paper';
+  }
+}
+
+// ==========================================
+// AI Question Generation Service
+// ==========================================
+class QuestionGenerator {
+  constructor() {
+    this.contexts = [
+      'School', 'Library', 'Hospital', 'Airport', 'Station', 'Supermarket',
+      'Park', 'Museum', 'Hotel', 'Restaurant', 'Pharmacy', 'Shop', 'Bus',
+      'Office', 'Laboratory', 'Zoo', 'Elevator', 'Waiting room', 'Computer room', 'Reception'
+    ];
+    
+    // Cargar ciclo actual desde localStorage
+    this.currentExerciseIndex = parseInt(localStorage.getItem('icfes_exercise_index') || '0');
+    this.cycleLength = 15; // 15 ejercicios por ciclo
+    this.questionsPerExercise = 5; // 5 preguntas por ejercicio
+    
+    this.noticeTemplates = [
+      { text: 'Lunch for teachers from 12:00 to 1:00 p.m.', style: 'paper', correct: 'at a school' },
+      { text: 'How do I drive? Phone: 0152067', style: 'metal', correct: 'on a bus' },
+      { text: 'New Toys: Green monsters, angry dolls, and black helicopters', style: 'cardboard', correct: 'in a shop' },
+      { text: 'Please, take the one you want to read', style: 'library', correct: 'in a library' },
+      { text: 'Quiet please. Patients are resting.', style: 'hospital', correct: 'in a hospital' },
+      { text: 'Flight BA247 to London - Gate 12', style: 'digital', correct: 'at an airport' },
+      { text: 'Buy one, get one free. Today only!', style: 'classroom', correct: 'in a supermarket' },
+      { text: 'Do not feed the animals', style: 'office', correct: 'in a zoo' },
+      { text: 'Emergency exit. Do not block.', style: 'glass', correct: 'in an office' },
+      { text: 'Check-out time: 11:00 AM', style: 'hotel', correct: 'in a hotel' },
+      { text: 'No smoking area. Please respect others.', style: 'silver', correct: 'in a restaurant' },
+      { text: 'Free Wi-Fi available. Ask for password.', style: 'vintage', correct: 'in a cafe' },
+      { text: 'Please wait here for your turn.', style: 'gobelin', correct: 'at a reception' },
+      { text: 'Keep off the grass. Thank you.', style: 'gold', correct: 'in a park' },
+      { text: 'Sale: 50% off all items this week.', style: 'bronze', correct: 'in a shop' },
+      { text: 'Please clean up after your pet.', style: 'copper', correct: 'in a park' },
+      { text: 'No entry. Authorized personnel only.', style: 'wood', correct: 'in a laboratory' },
+      { text: 'Please queue here. Thank you.', style: 'fabric', correct: 'at a bank' },
+      { text: 'Open 24 hours. Welcome anytime.', style: 'neon', correct: 'in a pharmacy' },
+      { text: 'Please turn off your phone.', style: 'retro', correct: 'in a cinema' },
+      { text: 'No parking. Violators will be towed.', style: 'minimal', correct: 'on a street' },
+      { text: 'Please do not touch the exhibits.', style: 'elegant', correct: 'in a museum' },
+      { text: 'Fresh bread baked daily.', style: 'rustic', correct: 'in a bakery' },
+      { text: 'Meeting in progress. Do not disturb.', style: 'modern', correct: 'in an office' },
+      { text: 'Please show your ticket at entrance.', style: 'classic', correct: 'at a cinema' },
+      { text: 'Art exhibition: Today only!', style: 'artistic', correct: 'in a gallery' },
+      { text: 'Please wash your hands before eating.', style: 'paper', correct: 'in a restaurant' },
+      { text: 'No food or drinks allowed.', style: 'metal', correct: 'in a library' },
+      { text: 'Please return books to the cart.', style: 'cardboard', correct: 'in a library' },
+      { text: 'Visitors must sign in at desk.', style: 'digital', correct: 'in an office' },
+      { text: 'Please keep right. Pass on left.', style: 'classroom', correct: 'on a stairway' },
+      { text: 'No diving. Shallow water.', style: 'glass', correct: 'at a pool' },
+      { text: 'Room service available 24/7.', style: 'hotel', correct: 'in a hotel' },
+      { text: 'Please lower your voice.', style: 'silver', correct: 'in a library' },
+      { text: 'Free parking for customers.', style: 'vintage', correct: 'in a shop' },
+      { text: 'Please take a number and wait.', style: 'gobelin', correct: 'at a bank' },
+      { text: 'Children must be supervised.', style: 'gold', correct: 'in a pool' },
+      { text: 'No cameras allowed inside.', style: 'bronze', correct: 'in a museum' },
+      { text: 'Please use hand sanitizer.', style: 'copper', correct: 'in a hospital' },
+      { text: 'Quiet zone. No talking.', style: 'wood', correct: 'in a library' },
+      { text: 'Please recycle your bottles.', style: 'fabric', correct: 'in a park' },
+      { text: 'No smoking on premises.', style: 'neon', correct: 'at a station' },
+      { text: 'Please present ID for entry.', style: 'retro', correct: 'in a club' },
+      { text: 'Maximum capacity: 50 people.', style: 'minimal', correct: 'in a restaurant' },
+      { text: 'Please keep this area clean.', style: 'elegant', correct: 'in a park' },
+      { text: 'Hot food served all day.', style: 'rustic', correct: 'in a cafe' },
+      { text: 'Meeting room A is occupied.', style: 'modern', correct: 'in an office' },
+      { text: 'Please silence your devices.', style: 'classic', correct: 'in a theater' },
+      { text: 'Live music tonight at 8 PM.', style: 'artistic', correct: 'in a bar' },
+      { text: 'No shoes beyond this point.', style: 'paper', correct: 'in a home' },
+      { text: 'Please form a single line.', style: 'metal', correct: 'at a counter' },
+      { text: 'Free water available here.', style: 'cardboard', correct: 'in a park' },
+      { text: 'Please do not block the door.', style: 'digital', correct: 'in a building' },
+      { text: 'Class in session. Do not enter.', style: 'classroom', correct: 'at a school' },
+      { text: 'No pets allowed except guide dogs.', style: 'glass', correct: 'in a shop' },
+      { text: 'Please tip your server.', style: 'hotel', correct: 'in a restaurant' },
+      { text: 'Reserved seating for members.', style: 'silver', correct: 'in a club' },
+      { text: 'Please wait to be seated.', style: 'vintage', correct: 'in a restaurant' },
+      { text: 'No running in the hallways.', style: 'gobelin', correct: 'at a school' },
+      { text: 'Please use side entrance.', style: 'gold', correct: 'in a building' },
+      { text: 'Emergency phone: 911', style: 'bronze', correct: 'on a highway' },
+      { text: 'Please check out before leaving.', style: 'copper', correct: 'in a hotel' },
+      { text: 'No littering. Fine $100.', style: 'wood', correct: 'in a park' },
+      { text: 'Please keep gate closed.', style: 'fabric', correct: 'on a farm' },
+      { text: 'Flash photography prohibited.', style: 'neon', correct: 'in a museum' },
+      { text: 'Please hold the handrail.', style: 'retro', correct: 'on an escalator' },
+      { text: 'No bicycles on sidewalk.', style: 'minimal', correct: 'on a street' },
+      { text: 'Please remove headphones.', style: 'elegant', correct: 'in a library' },
+      { text: 'Organic vegetables for sale.', style: 'rustic', correct: 'in a market' },
+      { text: 'Please sign the guestbook.', style: 'modern', correct: 'in a museum' },
+      { text: 'No food or drink in lab.', style: 'classic', correct: 'in a laboratory' },
+      { text: 'Please take off your shoes.', style: 'artistic', correct: 'in a home' },
+      { text: 'Please return tray to counter.', style: 'paper', correct: 'in a cafeteria' },
+      { text: 'No cell phones in exam room.', style: 'metal', correct: 'at a school' },
+      { text: 'Please keep right on escalator.', style: 'cardboard', correct: 'in a station' },
+      { text: 'Free samples available today.', style: 'digital', correct: 'in a shop' },
+      { text: 'Please do not lean on glass.', style: 'classroom', correct: 'in a museum' },
+      { text: 'No swimming when lifeguard off.', style: 'glass', correct: 'at a beach' },
+      { text: 'Please respect quiet hours.', style: 'hotel', correct: 'in a hotel' }
+    ];
+  }
+
+  async generateExercise(count = 5) {
+    // Generate example (always the same for consistency)
+    const exampleTemplate = { 
+      text: 'Lunch for teachers from 12:00 to 1:00 p.m.', 
+      style: 'paper', 
+      correct: 'at a school' 
+    };
+    
+    const exampleDistractors = this.generateDistractors(exampleTemplate.correct);
+    const exampleOptions = this.shuffleOptions([
+      { id: 'A', text: exampleTemplate.correct },
+      { id: 'B', text: exampleDistractors[0] },
+      { id: 'C', text: exampleDistractors[1] }
+    ]);
+    
+    const example = {
+      id: 0,
+      scored: false,
+      interactive: false,
+      showAnswer: true,
+      notice: {
+        text: exampleTemplate.text,
+        style: exampleTemplate.style
+      },
+      options: exampleOptions,
+      answer: exampleOptions.find(opt => opt.text === exampleTemplate.correct).id
+    };
+    
+    // Calcular el índice de inicio para este ejercicio en el ciclo
+    const startIndex = this.currentExerciseIndex * this.questionsPerExercise;
+    
+    // Seleccionar templates basados en el ciclo actual (sin repetición)
+    const selectedTemplates = [];
+    for (let i = 0; i < count; i++) {
+      const templateIndex = (startIndex + i) % this.noticeTemplates.length;
+      selectedTemplates.push(this.noticeTemplates[templateIndex]);
+    }
+    
+    const questions = selectedTemplates.map((template, index) => {
+      const distractors = this.generateDistractors(template.correct);
+      const options = this.shuffleOptions([
+        { id: 'A', text: template.correct },
+        { id: 'B', text: distractors[0] },
+        { id: 'C', text: distractors[1] }
+      ]);
+      
+      return {
+        id: index + 1,
+        scored: true,
+        interactive: true,
+        notice: {
+          text: template.text,
+          style: template.style
+        },
+        options: options,
+        answer: options.find(opt => opt.text === template.correct).id,
+        difficulty: 'A2',
+        competency: 'Infer contextual location'
+      };
+    });
+
+    // Incrementar índice del ejercicio y guardar en localStorage
+    this.currentExerciseIndex = (this.currentExerciseIndex + 1) % this.cycleLength;
+    localStorage.setItem('icfes_exercise_index', this.currentExerciseIndex.toString());
+
+    return {
+      part: 2,
+      title: 'Notices',
+      instructions: {
+        es: '¿Dónde puede ver estos avisos?',
+        en: 'Where can you see these notices?'
+      },
+      example: example,
+      questions: questions,
+      exerciseNumber: this.currentExerciseIndex === 0 ? this.cycleLength : this.currentExerciseIndex
+    };
+  }
+
+  generateDistractors(correctAnswer) {
+    const allContexts = this.contexts.filter(c => 
+      !correctAnswer.toLowerCase().includes(c.toLowerCase())
+    );
+    const shuffled = allContexts.sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 2).map(c => this.formatContext(c));
+  }
+
+  formatContext(context) {
+    const prefixes = ['in', 'at', 'on'];
+    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+    return `${prefix} ${context.toLowerCase()}`;
+  }
+
+  shuffleOptions(options) {
+    return options.sort(() => Math.random() - 0.5);
+  }
+}
+
+// ==========================================
+// Notice Renderer Component (Local CSS-based)
+// ==========================================
+class NoticeRenderer {
+  constructor(styleManager) {
+    this.styleManager = styleManager;
+  }
+
+  render(data) {
+    let html = '<div class="notices-layout">';
+    
+    // Render example first
+    if (data.example) {
+      const example = data.example;
+      const styleClass = this.styleManager.getStyleClass(example.notice.style);
+      
+      html += `
+        <div class="example-section">
+          <div class="example-label">Ejemplo</div>
+          <div class="notice-question-card example-card" id="notice-card-${example.id}">
+            <div class="notice-signboard-wrapper">
+              <div class="notice-signboard ${styleClass}">
+                ${example.notice.text}
+              </div>
+            </div>
+            <div class="notice-options-pane">
+              <h4>0. Where can you see this notice?</h4>
+              <div class="abc-options">
+                ${example.options.map(opt => `
+                  <button class="abc-btn ${opt.id === example.answer ? 'correct' : ''}" data-qid="${example.id}" data-val="${opt.id}" id="btn-${example.id}-${opt.id}">
+                    <span class="abc-letter">${opt.id}</span>
+                    <span class="abc-text">${opt.text}</span>
+                  </button>
+                `).join('')}
+              </div>
+              <div class="example-answer-panel">
+                <span class="answer-label">Respuesta:</span>
+                <div class="answer-options">
+                  <span class="answer-choice">0</span>
+                  <span class="answer-choice is-selected">${example.answer}</span>
+                  ${['A', 'B', 'C'].filter(l => l !== example.answer).map(letter => `
+                    <span class="answer-choice">${letter}</span>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    
+    // Render regular questions
+    for (const question of data.questions) {
+      const styleClass = this.styleManager.getStyleClass(question.notice.style);
+      
+      html += `
+        <div class="notice-question-card" id="notice-card-${question.id}">
+          <div class="notice-signboard-wrapper">
+            <div class="notice-signboard ${styleClass}">
+              ${question.notice.text}
+            </div>
+          </div>
+          <div class="notice-options-pane">
+            <h4>${question.id}. Where can you see this notice?</h4>
+            <div class="abc-options">
+              ${question.options.map(opt => `
+                <button class="abc-btn option-btn" data-qid="${question.id}" data-val="${opt.id}" id="btn-${question.id}-${opt.id}">
+                  <span class="abc-letter">${opt.id}</span>
+                  <span class="abc-text">${opt.text}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    
+    html += '</div>';
+    el.workspace.innerHTML = html;
+    
+    this.attachEventListeners();
+  }
+
+  attachEventListeners() {
+    const buttons = el.workspace.querySelectorAll('.option-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => this.handleOptionClick(e));
+    });
+  }
+
+  handleOptionClick(e) {
+    if (state.checked) return;
+    
+    const btn = e.currentTarget;
+    const qid = btn.dataset.qid;
+    const val = btn.dataset.val;
+    
+    // Don't allow selection on example (id: 0)
+    if (qid === '0') return;
+    
+    // Remove previous selection for this question
+    const siblings = el.workspace.querySelectorAll(`[data-qid="${qid}"]`);
+    siblings.forEach(sib => sib.classList.remove('selected'));
+    
+    // Add selection to clicked button
+    btn.classList.add('selected');
+    
+    // Store answer
+    state.userAnswers[qid] = val;
+    this.updateProgress();
+  }
+
+  updateProgress() {
+    const total = state.currentExercise?.questions?.length || 0;
+    const answered = Object.keys(state.userAnswers).filter(id => id !== '0').length;
+    const percentage = total > 0 ? (answered / total) * 100 : 0;
+    
+    el.progressBar.style.width = `${percentage}%`;
+    el.scoreDisplay.textContent = `${answered}/${total}`;
+  }
+
+  showAnswers() {
+    if (!state.currentExercise) return;
+    
+    state.currentExercise.questions.forEach(q => {
+      const correctBtn = document.getElementById(`btn-${q.id}-${q.answer}`);
+      if (correctBtn) {
+        correctBtn.classList.add('correct');
+      }
+    });
+  }
+
+  checkAnswers() {
+    if (!state.currentExercise) return;
+    
+    let correct = 0;
+    
+    state.currentExercise.questions.forEach(q => {
+      const userAnswer = state.userAnswers[q.id];
+      const correctBtn = document.getElementById(`btn-${q.id}-${q.answer}`);
+      
+      if (userAnswer === q.answer) {
+        correct++;
+        if (correctBtn) correctBtn.classList.add('correct');
+      } else if (userAnswer) {
+        const wrongBtn = document.getElementById(`btn-${q.id}-${userAnswer}`);
+        if (wrongBtn) wrongBtn.classList.add('incorrect');
+        if (correctBtn) correctBtn.classList.add('correct');
+      }
+    });
+    
+    state.checked = true;
+    const total = state.currentExercise.questions.length;
+    el.scoreDisplay.textContent = `${correct}/${total}`;
+  }
+
+  reset() {
+    state.userAnswers = {};
+    state.checked = false;
+    
+    const buttons = el.workspace.querySelectorAll('.option-btn');
+    buttons.forEach(btn => {
+      btn.classList.remove('selected', 'correct', 'incorrect');
+    });
+    
+    this.updateProgress();
+  }
+}
+
+// ==========================================
+// Application Controller
+// ==========================================
+class AppController {
+  constructor() {
+    this.styleManager = new NoticeStyleManager();
+    this.questionGenerator = new QuestionGenerator();
+    this.renderer = new NoticeRenderer(this.styleManager);
+    
+    this.init();
+  }
+
+  async init() {
+    this.attachEventListeners();
+    await this.generateNewExercise();
+  }
+
+  attachEventListeners() {
+    el.themeToggle.addEventListener('click', () => this.toggleTheme());
+    el.btnReset.addEventListener('click', () => this.renderer.reset());
+    el.btnShowAnswers.addEventListener('click', () => this.renderer.showAnswers());
+    el.btnCheck.addEventListener('click', () => this.renderer.checkAnswers());
+    el.btnGenerate.addEventListener('click', () => this.generateNewExercise());
+  }
+
+  toggleTheme() {
+    state.theme = state.theme === 'dark' ? 'light' : 'dark';
+    document.body.className = state.theme === 'dark' ? 'theme-slate-dark' : 'theme-slate-light';
+  }
+
+  async generateNewExercise() {
+    el.workspace.innerHTML = `
+      <div class="loading-container">
+        <div class="spinner"></div>
+        <p class="loading-text">Generando ejercicio...</p>
+      </div>
+    `;
+    
+    state.userAnswers = {};
+    state.checked = false;
+    el.progressBar.style.width = '0%';
+    el.scoreDisplay.textContent = '0/0';
+    
+    try {
+      const exercise = await this.questionGenerator.generateExercise(5);
+      state.currentExercise = exercise;
+      this.renderer.render(exercise);
+      this.renderer.updateProgress();
+    } catch (error) {
+      el.workspace.innerHTML = `
+        <div class="loading-container">
+          <p class="loading-text" style="color: var(--color-rose)">Error al generar ejercicio: ${error.message}</p>
+        </div>
+      `;
+    }
+  }
+}
+
+// Initialize Application
+document.addEventListener('DOMContentLoaded', () => {
+  new AppController();
+});
+  </script>
+</body>
+</html>
